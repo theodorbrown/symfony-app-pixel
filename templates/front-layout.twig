@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<header id="main-header">
+    <div class="container">
+        <div id="main-title" class="my-2">
+            <div class="display-3 d-flex align-items-center">
+               
+                <a href="{{ path('app_app_home') }}">
+                    <div class="bg-primary p-2 text-white me-3">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                </a>
+                
+                <div>
+                    Pixel
+                    <div class="fs-5">Pour les passionnés du jeu rétro</div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-light bg-light my-3 navbar-expand-lg">
+            <div class="container">
+                {{ knp_menu_render('main') }}
+                {{ knp_menu_render('user', {style: 'horizontal'}) }}
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+    {#Affichage des messages flash#}
+        <div class="flash-message toast-container position-absolute top-0 end-0 p-3">
+            {% for type, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="toast bg-{{ type }} show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">{{ type }}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            {{message}}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        {% block content %}{% endblock %}
+    </div>
+</main>
+{% endblock %}

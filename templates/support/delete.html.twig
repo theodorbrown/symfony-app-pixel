@@ -1,0 +1,16 @@
+{% extends "front-layout.twig" %}
+
+{% block content %}
+<h1>Supprimer un support</h1>
+<form action="" method="post">
+    <div class="alert alert-danger">
+        Vous êtes sûre de vouloir supprimer : {{ entity.name }}
+    </div>
+
+    <button type="submit" class="btn btn-danger">Oui</button>
+    <a href="{{ path('support_index') }}" class="btn btn-success">Non</a>
+
+    {# Génération d'un token pour plus de sécurité #}
+    <input type="hidden" name="token" value="{{ csrf_token('delete' ~ entity.id) }}">
+</form>
+{% endblock %}

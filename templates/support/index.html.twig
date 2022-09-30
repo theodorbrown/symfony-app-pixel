@@ -1,0 +1,26 @@
+{% extends "front-layout.twig" %}
+
+{% block content %}
+
+<h1>Liste des supports (index)</h1>
+
+<div class="d-flex justify-content-end mb-3">
+    <a href="{{ path('support_new') }}" class="btn btn-success">Ajouter un support</a>
+</div>
+
+{#{{ dump(entities) }}#}
+<ul class="list-group">
+    {% for support in supports %}
+        <li class="list-group-item">
+            <div class="d-flex w-100 justify-content-between">
+                <h5> {{support.name}} </h5>
+                <div>
+                    <a href="{{ path('support_edit',  {'id':support.id }) }}" class="btn btn-light"><i class="fas fa-edit"></i></a>
+                    <a href="{{ path('support_delete',  {'id':support.id }) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

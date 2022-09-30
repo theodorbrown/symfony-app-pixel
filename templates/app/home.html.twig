@@ -1,0 +1,8 @@
+{% extends "front-layout.twig" %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center m-5">
+    <a href="{{ path('app_game_list') }}" class="btn btn-primary m-5">Jeux <i class="fas fa-arrow-right"></i></a>
+    <a href="{{ path('support_index') }}" class="btn btn-primary m-5">Supports <i class="fas fa-arrow-right"></i></a>
+</div>
+{% endblock %}

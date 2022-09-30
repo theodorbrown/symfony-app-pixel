@@ -1,0 +1,15 @@
+$primary: rgb(56, 235, 20);
+
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "node_modules/tinymce/skins/ui/oxide/skin";
+@import "node_modules/tinymce/skins/content/default/content";
+@import "node_modules/tinymce/skins/ui/oxide/content";
+
+.menu-register > .nav-link {
+    font-weight: bold;
+    background-color: rgb(194, 129, 129);
+    color: white;
+}

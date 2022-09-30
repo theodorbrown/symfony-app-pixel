@@ -1,0 +1,7 @@
+<nav aria-label="Pagination">
+  <ul class="pagination">
+    {% for p in 1..pageCount %}
+        <li class="page-item {% if app.request.get('p', 1) == p %} active {% endif %} "><a class="page-link" href="{{path(route,  { "p": p}) }}">{{ p }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

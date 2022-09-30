@@ -1,0 +1,16 @@
+{% extends "front-layout.twig" %}
+
+{% block content %}
+
+    <h1 class="">Edition d'un jeu</h1>
+    {% embed "decorator/_form.html.twig" %}
+        {% block formBody %}
+            {{ form_widget(form) }}
+            {% if entity.image is not empty %}
+            <img src="{{ asset(entity.image.webPath) }}" alt="{{ entity.title }}">
+            {#affichage de l'image #}
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

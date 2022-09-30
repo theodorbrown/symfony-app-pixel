@@ -1,0 +1,15 @@
+{{ form_start(form)}}
+
+<div class="card">
+    <div class="card-body">
+    {% block formBody %}
+        {{form_widget(form)}} {# affiche les champs du formulaire #}
+    {% endblock %}
+    </div>
+
+    <div class="card-footer text-center">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </div>
+</div>
+
+{{form_end(form)}}
